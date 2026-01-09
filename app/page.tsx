@@ -1,6 +1,4 @@
-import { FaCheck } from "react-icons/fa";
 import { FiCheck } from "react-icons/fi";
-import { IoCheckmark } from "react-icons/io5";
 
 export default function Home() {
   return (
