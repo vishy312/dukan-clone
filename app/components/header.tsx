@@ -5,7 +5,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 
 const Header = () => {
   return (
-    <div className="flex justify-between px-6 py-2">
+    <header className="flex justify-between px-6 py-2 h-12">
       <div className="flex items-center gap-4 grow">
         <div className="text-primary font-semibold ">Analytics</div>
         <div className="flex text-neutral-600 text-xss items-center gap-1 cursor-pointer">
@@ -32,7 +32,7 @@ const Header = () => {
           <RxHamburgerMenu />
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 
