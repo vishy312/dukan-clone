@@ -56,7 +56,7 @@ export default function Home() {
           </div>
         </div>
         <div className="flex gap-2 items-start ">
-          <div className="text-neutral-500 size-5 border border-neutral-500 rounded-full font-semibold text-md size-8 flex items-center justify-center">
+          <div className="text-neutral-500 border border-neutral-500 rounded-full font-semibold text-md size-8 flex items-center justify-center">
             3
           </div>
           <p className="text-md font-semibold text-neutral-500">

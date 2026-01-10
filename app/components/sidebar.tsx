@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { BsShop } from "react-icons/bs";
 import { RiWallet3Line } from "react-icons/ri";
 import { navItems } from "../utils/navitems";
+import Link from "next/link";
 
 const Sidebar = () => {
   const [selected, setSelected] = useState("");
@@ -21,36 +22,46 @@ const Sidebar = () => {
           const ActiveIcon = item.activeIcon;
           return (
             <div key={index}>
-              <div
-                className={`p-2 flex gap-2 cursor-pointer hover:bg-neutral-50/5 rounded-sm ${
-                  selected === item.title
-                    ? "bg-neutral-50/10 text-neutral-200"
-                    : "text-neutral-400"
-                }`}
-                onClick={() => {
-                  setSelected(item.title);
-                  setSelectedSubitem("");
+              <Link
+                href={item.endpoint}
+                onClick={(e) => {
+                  if (item.subItems.length > 0) e.preventDefault();
                 }}
               >
-                <span>
-                  {selected === item.title && <ActiveIcon />}
-                  {selected !== item.title && <Icon />}
-                </span>
-                <span className="text-xs ">{item.title}</span>
-              </div>
+                <div
+                  className={`p-2 flex gap-2 cursor-pointer hover:bg-neutral-50/5 rounded-sm ${
+                    selected === item.title
+                      ? "bg-neutral-50/10 text-neutral-200"
+                      : "text-neutral-400"
+                  }`}
+                  onClick={() => {
+                    setSelected(item.title);
+                    setSelectedSubitem("");
+                  }}
+                >
+                  <span>
+                    {selected === item.title && <ActiveIcon />}
+                    {selected !== item.title && <Icon />}
+                  </span>
+                  <span className="text-xs ">{item.title}</span>
+                </div>
+              </Link>
               {item.subItems.length > 0 && item.title === selected && (
                 <ul className="mx-6 py-1 list-none text-xss flex flex-col text-neutral-400 ">
                   {item.title === selected &&
                     item.subItems.map((subitem, ind) => (
-                      <li
-                        key={ind}
-                        className={`cursor-pointer hover:bg-neutral-50/5 rounded-sm px-2 py-1 ${
-                          selectedSubitem === subitem ? "text-neutral-200" : ""
-                        }`}
-                        onClick={() => setSelectedSubitem(subitem)}
-                      >
-                        {subitem}
-                      </li>
+                      <Link key={ind} href={subitem.endpoint}>
+                        <li
+                          className={`cursor-pointer hover:bg-neutral-50/5 rounded-sm px-2 py-1 ${
+                            selectedSubitem === subitem.title
+                              ? "text-neutral-200"
+                              : ""
+                          }`}
+                          onClick={() => setSelectedSubitem(subitem.title)}
+                        >
+                          {subitem.title}
+                        </li>
+                      </Link>
                     ))}
                 </ul>
               )}
