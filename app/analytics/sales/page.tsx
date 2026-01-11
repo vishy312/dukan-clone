@@ -31,7 +31,7 @@ const SalesAnalytics = () => {
   return (
     <div className=" w-full h-screen">
       <div className="flex justify-between items-baseline mb-6">
-        <h2 className="text-primary font-semibold">Products</h2>
+        <h2 className="text-primary font-semibold">Sales</h2>
         <select
           name="timeline"
           id="timeline"
