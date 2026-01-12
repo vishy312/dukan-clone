@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const archivo = Archivo({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-archivo", // optional but useful
+  variable: "--font-archivo",
 });
 
 export default function RootLayout({
@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${archivo.variable} antialiased`}>
+      <body className={`${archivo.className} antialiased`}>
         <div className="flex h-screen">
           <Sidebar />
           <div className="w-full h-screen flex flex-col">

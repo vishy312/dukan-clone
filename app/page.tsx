@@ -1,4 +1,5 @@
 import { FiCheck } from "react-icons/fi";
+import Button from "./components/button";
 
 export default function Home() {
   return (
@@ -50,9 +51,7 @@ export default function Home() {
             <p className="text-xs text-neutral-500 tracking-wide">
               Start adding products to your online store now
             </p>
-            <button className="text-xs bg-sky-700 text-neutral-100 rounded-sm px-6 py-2 tracking-wide font-medium cursor-pointer mt-4">
-              Add Product
-            </button>
+            <Button className="mt-4">Add product</Button>
           </div>
         </div>
         <div className="flex gap-2 items-start ">
