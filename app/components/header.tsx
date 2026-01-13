@@ -1,13 +1,20 @@
+"use client";
+
 import React from "react";
 import { HiSpeakerphone } from "react-icons/hi";
 import { IoSearchOutline } from "react-icons/io5";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { navMap } from "../utils/navMap";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
+  const activeNavPath = usePathname();
+  const activeNav = navMap[activeNavPath];
+
   return (
     <header className="flex justify-between px-6 py-2 h-12">
       <div className="flex items-center gap-4 grow">
-        <div className="text-primary font-semibold ">Analytics</div>
+        <div className="text-primary font-semibold ">{activeNav}</div>
         <div className="flex text-neutral-600 text-xss items-center gap-1 cursor-pointer">
           <span className="border border-neutral-600 size-3 rounded-full flex items-center justify-center">
             ?

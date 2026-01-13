@@ -57,7 +57,9 @@ const Sidebar = () => {
                               ? "text-neutral-200"
                               : ""
                           }`}
-                          onClick={() => setSelectedSubitem(subitem.title)}
+                          onClick={() => {
+                            setSelectedSubitem(subitem.title);
+                          }}
                         >
                           {subitem.title}
                         </li>
